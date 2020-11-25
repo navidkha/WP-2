@@ -1,0 +1,101 @@
+body {
+    background: url(img3.jpg);
+    background-size: 100%; 
+}
+
+.Header
+{
+    color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+    top: 20px;
+    height:80px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+.Image
+{
+position: fixed;
+top: 0px;
+}
+
+.me
+{
+    position: relative;
+
+}
+.Menu
+{		
+    position: sticky;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    color: darkslategray;
+    background-color:rgb(159, 214, 241);
+    top: 60px;
+    margin-left: 0 auto;
+    height:40px;	
+
+}
+
+.Content
+{	
+    position: relative;
+    font-size: 25;
+    top: 10px;
+    text-align: center;
+    height:500px;	
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    backface-visibility: hidden;
+    font-weight: 700;
+}
+
+.Footer
+{	
+    position: fixed;
+    top: 95%;
+    width: 99%;
+    text-align: center;
+    height:25px;
+    background-color: rgb(67, 69, 71);
+    color: aliceblue;   
+    font-size: 18;	
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Center
+{
+    text-align: center;
+    font-size: 22;
+}
+
+.Title
+{
+    grid-area:name;
+    height: 75px;
+    position: relative;
+    text-align: center;
+    color: rgb(119, 25, 25);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 30px;
+
+}
+
+.table
+{
+    margin-left: 0 auto;
+}
+
+@media (max-width: 600px) {
+   .Menu, .Content {
+    width: 100%;
+    height: auto;	
+  }
+  .Image{
+      position: relative;
+      width: auto;
+      height: auto;
+  }
+}
+
