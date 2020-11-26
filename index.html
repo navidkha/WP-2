@@ -20,7 +20,7 @@
             </p>
             
                 <select name="uiTitle" id="uiTitle">  
-                    <option value="male">آقا</option>
+                    <option value="male" >آقا</option>
                     <option value="female">خانوم</option>
                     <option value="other">غیره</option>
                 </select>
@@ -31,13 +31,13 @@
             </p>
         
                 <label name="fname">نام</label><br>
-                <input type="text" name="uiFname"><br><br>
+                <input type="text" name="uiFname" dir="auto"><br><br>
                 <label name="lname">نام خانوادگی</label><br>
-                <input type="text" name="uiLname"><br><br>
+                <input type="text" name="uiLname" dir="auto"><br><br>
                 <label name="ename"> نام و نام خانوادگی به انگلیسی </label><br>
                 <input type="text" name="uiEname"><br><br>
-                <label name="uiSsid"> کد ملی</label><br>
-                <input type="text" name="uiSsid"><br><br>
+                <label name="ssid" > کد ملی</label><br>
+                <input type="text" name="uiSsid" placeholder="044-079501-1"><br><br>
             
             <p>
                 اطلاعات تماس با شما  
@@ -46,16 +46,16 @@
                 <label for="email"> *پست الکترونیکی</label><br>
                 <input type="text" id="uiEmail" name="uiEmail"><br><br>
                 <label for="pnumber"> *شماره تماس</label><br>
-                <input type="text" id="uiPnumber" name="uiPnumber"><br><br>
+                <input type="text" id="uiPnumber" name="uiPnumber" value="09" pattern="[0][1-9]{2}[0-9]{4}[0-9]{4}"><br><br>
             
             <p>
                 تعیین رمز
             </p>
             
                 <label for="pass1"> رمز</label><br>
-                <input type="text" id="uiPass1" name="uiPass1"><br><br>
+                <input type="password" id="uiPass1" name="uiPass1"><br><br>
                 <label for="pass2"> تکرار رمز</label><br>
-                <input type="text" id="uiPass2" name="uiPass2"><br><br>
+                <input type="password" id="uiPass2" name="uiPass2"><br><br>
             
             <p>
                 سایر اطلاعات شخصی  
@@ -65,7 +65,7 @@
                 <input type="text" id="uiAddress" name="uiAddress" size="100"><br><br>
 
                 <label for="birthday">تاریخ تولد</label><br>
-                <input type="date" id="uiBirthday" name="uiBirthday"><br><br>
+                <input type="date" name="uiBirthday" value="1378/02/22" min="1310-01-01" max="1390-12-29" /><br><br>
 
                 <label for="rel">*وضعیت تاهل</label><br>
                 <input type="radio" name="uiRel" value="single">
