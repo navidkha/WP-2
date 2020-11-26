@@ -4,80 +4,87 @@
         <link rel="stylesheet" href="main.css" >
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="main.js"></script>
     </head>
     <body>
         <div class="Header"><h1>فرم مشخصات</h1></div>
 
-        <div class="Title"><h1>لطفا اطاعات زیر را تکمیل کنید</h1></div>
+        <div class="Title"><h1>لطفا اطلاعات زیر را تکمیل کنید</h1></div>
         <br>
         
         <div class="Content">
+
+        <form method="POST" action="#">
             <p>
                 عنوان
             </p>
-            <form>
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">آقا</label><br>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">خانوم</label><br>
-                <input type="radio" id="other" name="gender" value="other">
-                <label for="other">غیره</label><br> 
-            </form>
+            
+                <select name="uiTitle" id="uiTitle">  
+                    <option value="male">آقا</option>
+                    <option value="female">خانوم</option>
+                    <option value="other">غیره</option>
+                </select>
+
             
             <p> 
                 لطفا اطلاعات فردی خود را وارد کنید 
             </p>
-            <form>
-                <label for="fname">نام</label><br>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="lname">نام خانوادگی</label><br>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="ename"> نام و نام خانوادگی به انگلیسی </label><br>
-                <input type="text" id="ename" name="ename"><br><br>
-                <label for="ssid"> کد ملی</label><br>
-                <input type="text" id="ssid" name="ssid"><br><br>
-            </form>
+        
+                <label name="fname">نام</label><br>
+                <input type="text" name="uiFname"><br><br>
+                <label name="lname">نام خانوادگی</label><br>
+                <input type="text" name="uiLname"><br><br>
+                <label name="ename"> نام و نام خانوادگی به انگلیسی </label><br>
+                <input type="text" name="uiEname"><br><br>
+                <label name="uiSsid"> کد ملی</label><br>
+                <input type="text" name="uiSsid"><br><br>
+            
             <p>
                 اطلاعات تماس با شما  
             </p>
-            <form>
+          
                 <label for="email"> *پست الکترونیکی</label><br>
-                <input type="text" id="email" name="email"><br><br>
+                <input type="text" id="uiEmail" name="uiEmail"><br><br>
                 <label for="pnumber"> *شماره تماس</label><br>
-                <input type="text" id="pnumber" name="pnumber"><br><br>
-            </form>
+                <input type="text" id="uiPnumber" name="uiPnumber"><br><br>
+            
             <p>
                 تعیین رمز
             </p>
-            <form>
+            
                 <label for="pass1"> رمز</label><br>
-                <input type="text" id="pass1" name="pass1"><br><br>
+                <input type="text" id="uiPass1" name="uiPass1"><br><br>
                 <label for="pass2"> تکرار رمز</label><br>
-                <input type="text" id="pass2" name="pass2"><br><br>
-            </form>
+                <input type="text" id="uiPass2" name="uiPass2"><br><br>
+            
             <p>
                 سایر اطلاعات شخصی  
             </p>
-            <form>
+            
                 <label for="address"> نشانی منزل</label><br>
-                <input type="text" id="address" name="address" size="100"><br><br>
-                    <label for="birthday">تاریخ تولد</label><br>
-                    <input type="date" id="birthday" name="birthday"><br><br>
-                    <label for="rel">وضعیت تاهل*</label><br>
-                    <select name="rel" id="rel">  
-                        <option value="single">مجرد</option>
-                        <option value="engaged">متاهل</option>
-                    </select>
-                    <br><br>  
-                    <label for="intrests">علایق شما</label><br>
-                    <input type="checkbox" id="web" name="web" value="web">
-                    <label for="web">  برنامه نویسی وب</label><br>
-                    <input type="checkbox" id="ai" name="ai" value="ai">
-                    <label for="ai"> هوش مصنوعی</label><br>
-                    <input type="checkbox" id="network" name="network" value="network">
-                    <label for="netwrok"> ‌شبکه‌های کامپیوتری</label><br><br>
+                <input type="text" id="uiAddress" name="uiAddress" size="100"><br><br>
 
-            <input type="submit" value="ارسال"><br><br><br><br>
+                <label for="birthday">تاریخ تولد</label><br>
+                <input type="date" id="uiBirthday" name="uiBirthday"><br><br>
+
+                <label for="rel">*وضعیت تاهل</label><br>
+                <input type="radio" name="uiRel" value="single">
+                <label for="single">مجرد</label><br>
+                <input type="radio" name="uiRel" value="engaged">
+                <label for="engaged">متاهل</label><br><br>
+
+                <label for="interests">علایق شما</label><br>
+                <input type="checkbox" name="uiInterets" value="web">
+                <label for="web">  برنامه نویسی وب</label><br>
+                <input type="checkbox"  name="uiInterets" value="ai">
+                <label for="ai"> هوش مصنوعی</label><br>
+                <input type="checkbox" name="uiInterets" value="network">
+                <label for="netwrok"> ‌شبکه‌های کامپیوتری</label><br><br>
+
+        </form>
+            <p id="uiMessage" style="color: rgb(82, 17, 17);"></p>
+            <input type="submit" name="uiSubmit" value="ارسال" onclick="return check()"><br><br><br><br>
+
         </div>
 
         <div class="Footer"><footer>Copyright@ Navid Khalili 964403</footer></div>
