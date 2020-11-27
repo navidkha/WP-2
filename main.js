@@ -1,48 +1,46 @@
-function isPersian(event){
+function isPersian(name){
     var p = /^[\u0600-\u06FF\s]*$/;
 
-    if (!p.test(event)) {
+    if (!p.test(name)) {
         return false;
     }
     return true;
 }
 
-function isNumber(event) {
-    if (event.keyCode < 48 || event.keyCode > 57) {
+function isNumber(number) {
+    if (/^[0-9\-]+$/.test(number)) {
         return true;
     }
     return false;
 }
 
 
-function isPassword(event) {
-    if (/^[a-zA-Z0-9_+!#$*=]*$/.test(event))
-  {
-    return true;
-  }
+function isPassword(pass) {
+    if (/^[a-zA-Z0-9_+!#$*=]*$/.test(pass)){
+        return true;
+    }
     return false;
 }
 
 function validBD (date) {
-    var check = /^[1-4]\d{3}\/((0[1-6]\/((3[0-1])|([1-2][0-9])|(0[1-9])))|((1[0-2]|(0[7-9]))\/(30|([1-2][0-9])|(0[1-9]))))$/;
+    var check = /^[1][3][1-8]\d{1}\/((0[1-6]\/((3[0-1])|([1-2][0-9])|(0[1-9])))|((1[0-2]|(0[7-9]))\/(30|([1-2][0-9])|(0[1-9]))))$/;
     if (check.test(date)) {
         return true;
     }
     return false;
 }
 
-function isEnglish(event) {
-    if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode >= 97 && event.keyCode <= 122) {
+function isEnglish(name) {
+    if (/^[A-Za-z0-9\s]*$/.test(name)){
         return true;
     }
     return false;
 }
 
 function ValidateEmail(mail) {
- if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
-  {
-    return true;
-  }
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+        return true;
+    }
     return false;
 }
 
@@ -53,7 +51,7 @@ function ValidateEmail(mail) {
 
 function check(){
 
-    var error = "";
+    var error = "فرم تکمیل شد";
     //get title
     var t = document.getElementsByName("uiTitle")[0]
     var title = t.options[t.selectedIndex].value;
@@ -80,8 +78,8 @@ function check(){
     //get and check social security number
     var ssid = document.getElementsByName("uiSsid")[0].value;
 
-    if (ssid.length != 10) 
-        error += "هشدار: شماره ملی نامعتبر است. تعداد آن را چک کنید<br/>"
+    if (ssid.length != 12) 
+        error += "هشدار: شماره ملی نامعتبر است<br/>"
     if (!isNumber(ssid)) 
         error += "هشدار: برای کد ملی فقط از اعداد انگلیسی استفاده کنید<br/>"
     
@@ -104,7 +102,7 @@ function check(){
     if (pnumber == "") {
         error += "هشدار: وارد کردن شماره موبایل اجباری است<br />"
     }
-    else if (pnumber.length != 11) {
+    else if (pnumber.length != 11 || !isNumber(pnumber)) {
         error += "هشدار: شماره موبایل نامعتبر<br />"
     }
 
@@ -139,7 +137,7 @@ function check(){
     var relationship_status= -1;
     for (var i=0; i < document.getElementsByName("uiRel").length; i++) {
         if (document.getElementsByName("uiRel")[i].checked) {
-            selectedstatus = document.getElementsByName("uiRel")[i].value;
+            relationship_status = document.getElementsByName("uiRel")[i].value;
         }
     }
     if (relationship_status == -1)
