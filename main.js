@@ -23,6 +23,14 @@ function isPassword(event) {
     return false;
 }
 
+function validBD (date) {
+    var check = /^[1-4]\d{3}\/((0[1-6]\/((3[0-1])|([1-2][0-9])|(0[1-9])))|((1[0-2]|(0[7-9]))\/(30|([1-2][0-9])|(0[1-9]))))$/;
+    if (check.test(date)) {
+        return true;
+    }
+    return false;
+}
+
 function isEnglish(event) {
     if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode >= 97 && event.keyCode <= 122) {
         return true;
@@ -122,8 +130,10 @@ function check(){
     if (address.length >250) 
         error += "هشدار: طول آدرس باید کمتر از 250 حرف باشد<br />"
 
-    //get birthday
+    //get and check birthday
     var birthday = document.getElementsByName("uiBirthday")[0].value;
+    if (!validBD(birthday))
+        error += "هشدار: فرمت تاریخ تولد رعایت نشده است<br />"
 
     //get and relationship status 
     var relationship_status= -1;
